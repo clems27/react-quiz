@@ -13,9 +13,15 @@ import React, { Component } from "react";
 class AnimalSpotter extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      spotAnimal:0
+    };
   }
-
+  increment = () => {
+    this.setState(previousState => {
+      return {spotAnimal: previousState.orders + 1 };
+    });
+  };
   render() {
     return (
       <div className="animal-spotter">

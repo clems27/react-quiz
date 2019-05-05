@@ -16,16 +16,27 @@
  * provide a key prop which tells React which list item is which
  */
 
-import React from "react";
+import React, { Component } from "react";
 
-function TigersExhibit() {
+class TigersExhibit extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      population: "",
+      habitats:""
+    }
+  }
+  render(){
   return (
     <div className="tigers">
       <h2>Tigers</h2>
-      <p>There are ... tigers in the world</p>
-      <ul>{/* DELETE THIS LINE AND WRITE THE ANSWER PART B HERE */}</ul>
+      <p>There are {this.pros} tigers in the world</p>
+      {/* <ul>{this.props.map((habitats index) => {
+        return <li key={index}>{habitats}</li>;
+      })}</ul> */}
     </div>
   );
+  }
 }
 
 export default TigersExhibit;
